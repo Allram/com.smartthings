@@ -6,6 +6,15 @@ module.exports = class SmartThingsDeviceOven extends SmartThingsDevice {
 
   static CAPABILITIES = [
     {
+      homeyCapabilityId: 'samsung_oven_progress_remaining_time',
+      smartThingsComponentId: 'main',
+      smartThingsCapabilityId: 'samsungce.ovenOperatingState',
+      smartThingsAttributeId: 'remainingTimeStr',
+      async onReport({ value }) {
+        return value;
+      },
+    },
+    {
       homeyCapabilityId: 'samsung_oven_status_job',
       smartThingsComponentId: 'main',
       smartThingsCapabilityId: 'samsungce.ovenOperatingState',
